@@ -20,7 +20,7 @@ header {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
-  padding: 60px;
+  padding: 40px;
 }
 
 .description {
@@ -76,4 +76,10 @@ header {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+#saveMessage {
+  color: darkgreen;
+  font-weight: bold;
+  height: 20px;
 }
