@@ -4,6 +4,16 @@ dayjs.extend(window.dayjs_plugin_customParseFormat);
 
 // Query selectors
 const currentDayText = $("#currentDay");
+const textArea9 = $("#textarea-9");
+const textArea10 = $("#textarea-10");
+const textArea11 = $("#textarea-11");
+const textArea12 = $("#textarea-12");
+const textArea13 = $("#textarea-13");
+const textArea14 = $("#textarea-14");
+const textArea15 = $("#textarea-15");
+const textArea16 = $("#textarea-16");
+const textArea17 = $("#textarea-17");
+
 
 // Variable of the current day
 const currentDay = dayjs();
@@ -26,3 +36,5 @@ $('textarea').each(function () {
         $(this).addClass('future');
     }
 })
+
+

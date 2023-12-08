@@ -11,6 +11,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  border: 1px solid #000000;
 }
 
 header {
@@ -35,13 +36,15 @@ header {
   white-space: pre-wrap;
   height: 100px;
   border-top: 1px solid white;
+  margin-top: 4px;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
   line-height: 100px;
+  border-bottom-left-radius: 15px;
+  border: 1px solid #000000;
 }
 
 .past {
@@ -60,11 +63,14 @@ header {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   background-color: #06aed5;
   color: white;
+  display: grid;
+  align-items: center;
 }
 
 .saveBtn i:hover {
