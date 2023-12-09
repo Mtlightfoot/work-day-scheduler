@@ -22,15 +22,6 @@ const textArea17 = $("#textarea-17");
 
 // Save button selectors
 const allSaveButtons = $(".saveBtn");
-const saveButton9 = $(".btn-9");
-const saveButton10 = $(".btn-10");
-const saveButton11 = $(".btn-11");
-const saveButton12 = $(".btn-12");
-const saveButton13 = $(".btn-13");
-const saveButton14 = $(".btn-14");
-const saveButton15 = $(".btn-15");
-const saveButton16 = $(".btn-16");
-const saveButton17 = $(".btn-17");
 
 // Variable of the current day
 const currentDay = dayjs();
@@ -82,22 +73,22 @@ textArea15.text(workDayText.time15);
 textArea16.text(workDayText.time16);
 textArea17.text(workDayText.time17);
 
-
+// Function when save button is clicked, text area for that div is saved
 allSaveButtons.each(function () {
     $(this).on("click", function () {
+
+        // Sets text area values to local storage
         const i = this.dataset.hour;
         workDayText["time" + i] = $(this).siblings("textarea").val();
         localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
+
+        // Shows message when a save button is clicked
+        saveMessage.text("Appointment added to local storage");
+
+        function emptyMessage() {
+            saveMessage.text("");
+        }
+
+        setTimeout(emptyMessage, 2000);
     })
-})
-
-// Function when any save button is clicked a message will appear to let you know the text has been added
-allSaveButtons.on("click", function () {
-    saveMessage.text("Appointment added to local storage");
-
-    function emptyMessage() {
-        saveMessage.text("");
-    }
-
-    setTimeout(emptyMessage, 2000);
 })
