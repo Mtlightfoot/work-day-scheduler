@@ -2,7 +2,7 @@
 
 ## Description
 
-My motivation for this project was to use HTML, CSS and JavaScript to create an application that will generate a random password based on criteria that is selected. This solves a problem of having to come up with a secure complex password yourself.
+My motivation for this project was to feature dynamically updated HTML and CSS powered by jQuery, and also Day.js library, to create a calendar application that allows users to save events for each hour of the day. This solves a problem of having remembering events and keeps all saved events on the webpage. This webpage also have the current date at the top of the page.
 
 ## Screenshot
 
@@ -14,7 +14,7 @@ N/A
 
 ## Usage
 
-This webpage can be used to create a random generated password between 8 and 128 characters with certain criteria's which are numeric, special, lowercase and uppercase characters. To use the random password generator you go onto the webpage, click generate password, you will then be asked a few different criteria's on which the password will be created using. Once all options have been selected a random password will be generated in the "Your secure password" box. 
+This webpage can be used to save events in hourly time blocks. To use the work day scheduler you can go onto the webpage, click into any of the time blocks and you will be able to type the event for that hour. When you are happy with the event typed in, click the save button to the right of that hour to save it, now even if the page is refreshed you've saved event will stay in the dedicated time block.
 
 ## Link
 
