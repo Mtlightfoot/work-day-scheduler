@@ -53,22 +53,49 @@ $('textarea').each(function () {
     }
 })
 
-$(document).ready(function () {
+let workDayText = {
+    time9: "",
+    time10: "",
+    time11: "",
+    time12: "",
+    time13: "",
+    time14: "",
+    time15: "",
+    time16: "",
+    time17: ""
+}
 
-    // 9AM Save Button
-    saveButton9.click(function () {
-        const textArea9Content = $('#textarea-9').val();
-        console.log(textArea9Content);
-    });
+workDayText = JSON.parse(localStorage.getItem("local-storage-data"));
 
-    // 10AM Save Button
-    saveButton10.click(function () {
-        const textArea10Content = $('#textarea-10').val();
-        console.log(textArea10Content);
-    });
+if (workDayText === null) {
+    workDayText = {};
+};
+
+textArea9.text(workDayText.time9);
+textArea10.text(workDayText.time10);
+textArea11.text(workDayText.time11);
+textArea12.text(workDayText.time12);
+textArea13.text(workDayText.time13);
+textArea14.text(workDayText.time14);
+textArea15.text(workDayText.time15);
+textArea16.text(workDayText.time16);
+textArea17.text(workDayText.time17);
 
 
-})
+// 9AM Save Button
+saveButton9.click(function () {
+    workDayText.time9 = $('#textarea-9').val();
+    console.log(workDayText);
+    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
+});
+
+// 10AM Save Button
+saveButton10.click(function () {
+    workDayText.time10 = $('#textarea-10').val();
+    console.log(workDayText);
+    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
+});
+
 
 // Function when any save button is clicked a message will appear to let you know the text has been added
 allSaveButtons.on("click", function () {
@@ -80,4 +107,3 @@ allSaveButtons.on("click", function () {
 
     setTimeout(emptyMessage, 2000);
 })
-
