@@ -8,19 +8,10 @@ dayjs.extend(window.dayjs_plugin_customParseFormat);
 const currentDayText = $("#currentDay");
 const saveMessage = $("#saveMessage");
 
-// Text area selectors
+// Text area selector
 const allTextAreas = $("textarea")
-const textArea9 = $("#textarea-9");
-const textArea10 = $("#textarea-10");
-const textArea11 = $("#textarea-11");
-const textArea12 = $("#textarea-12");
-const textArea13 = $("#textarea-13");
-const textArea14 = $("#textarea-14");
-const textArea15 = $("#textarea-15");
-const textArea16 = $("#textarea-16");
-const textArea17 = $("#textarea-17");
 
-// Save button selectors
+// Save button selector
 const allSaveButtons = $(".saveBtn");
 
 // Variable of the current day
@@ -63,15 +54,10 @@ if (workDayText === null) {
     workDayText = {};
 };
 
-textArea9.text(workDayText.time9);
-textArea10.text(workDayText.time10);
-textArea11.text(workDayText.time11);
-textArea12.text(workDayText.time12);
-textArea13.text(workDayText.time13);
-textArea14.text(workDayText.time14);
-textArea15.text(workDayText.time15);
-textArea16.text(workDayText.time16);
-textArea17.text(workDayText.time17);
+// Sets the initial text area content for each time block using local storage
+allTextAreas.each(function () {
+    $(this).text(workDayText["time" + this.dataset.hour]);
+});
 
 // Function when save button is clicked, text area for that div is saved
 allSaveButtons.each(function () {
