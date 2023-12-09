@@ -9,6 +9,7 @@ const currentDayText = $("#currentDay");
 const saveMessage = $("#saveMessage");
 
 // Text area selectors
+const allTextAreas = $("textarea")
 const textArea9 = $("#textarea-9");
 const textArea10 = $("#textarea-10");
 const textArea11 = $("#textarea-11");
@@ -82,68 +83,13 @@ textArea16.text(workDayText.time16);
 textArea17.text(workDayText.time17);
 
 
-// 9AM Save Button
-saveButton9.click(function () {
-    workDayText.time9 = $('#textarea-9').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 10AM Save Button
-saveButton10.click(function () {
-    workDayText.time10 = $('#textarea-10').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 11AM Save Button
-saveButton11.click(function () {
-    workDayText.time11 = $('#textarea-11').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 12AM Save Button
-saveButton12.click(function () {
-    workDayText.time12 = $('#textarea-12').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 13AM Save Button
-saveButton13.click(function () {
-    workDayText.time13 = $('#textarea-13').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 14AM Save Button
-saveButton14.click(function () {
-    workDayText.time14 = $('#textarea-14').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 15AM Save Button
-saveButton15.click(function () {
-    workDayText.time15 = $('#textarea-15').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 16AM Save Button
-saveButton16.click(function () {
-    workDayText.time16 = $('#textarea-16').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
-
-// 17AM Save Button
-saveButton17.click(function () {
-    workDayText.time17 = $('#textarea-17').val();
-    console.log(workDayText);
-    localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
-});
+allSaveButtons.each(function () {
+    $(this).on("click", function () {
+        const i = this.dataset.hour;
+        workDayText["time" + i] = $(this).siblings("textarea").val();
+        localStorage.setItem("local-storage-data", JSON.stringify(workDayText));
+    })
+})
 
 // Function when any save button is clicked a message will appear to let you know the text has been added
 allSaveButtons.on("click", function () {
